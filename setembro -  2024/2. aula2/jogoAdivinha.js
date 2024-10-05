@@ -9,5 +9,5 @@ do {
     }
 }while(num != numSorteado);
 
-    alert('Parabéns! Você acertou.')
+    alert('Parabéns! Você acertou.');
 
