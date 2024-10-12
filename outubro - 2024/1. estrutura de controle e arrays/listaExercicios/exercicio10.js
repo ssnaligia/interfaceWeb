@@ -4,7 +4,7 @@ function traduzirTexto(texto) {
         if (palavra.length >= 2) { 
             const primeiraSilaba = palavra.slice(0, 2); //pega a primeira sílaba
             
-            if (palavra.startsWith(primeiraSilaba + primeiraSilaba)) { //verifica se a palavra já tem a sílaba repetida
+            if (palavra.startsWith(primeiraSilaba + primeiraSilaba)) { //determina se uma string começa com a sílaba repetida
                 return palavra.slice(0, 2) + palavra.slice(4); //se a palavra começa com a sílaba repetida, remove a repetição
             }
         }
