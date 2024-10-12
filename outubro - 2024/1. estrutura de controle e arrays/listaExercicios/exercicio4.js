@@ -5,7 +5,7 @@ for(let fruta of frutas) {
     console.log(fruta);
 }
 
-console.log('Usando for tradicional: ');
+console.log('\nUsando for tradicional: ');
 for(let i=0; i<frutas.length; i++) {
-    console.log(frutas);
+    console.log(frutas[i]);
 }
