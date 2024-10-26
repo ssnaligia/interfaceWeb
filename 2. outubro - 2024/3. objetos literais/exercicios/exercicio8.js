@@ -38,6 +38,6 @@ for (let i=0; i < direitos.length; i++) {
     const min = direitos[i] < esquerdos[i] ? direitos[i] : esquerdos[i];
     if (min > 0) {
         const num = base + i;
-        console.log(`Tamanho ${num}: ${min} par`);
+        console.log(`Tamanho ${num}: 0${min} par`);
     }
 }
