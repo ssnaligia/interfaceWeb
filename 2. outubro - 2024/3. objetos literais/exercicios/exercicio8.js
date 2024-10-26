@@ -6,19 +6,25 @@ Você deve desenvolver um programa que analise os dados da entrega e calcule qua
 Seu programa receberá como entrada uma sequência de valores no seguinte formato:
 */
 
-const numeros = [38, 42, 39, 40, 38, 40, 37, 44, 37, 42, 41, 44, 37, 42];
-const pes = "EEEDDDEDDDEEED";
+const sapatos = [
+    {'tamanho': 38, 'pe': 'E'}, {'tamanho': 42, 'pe': 'E'},
+    {'tamanho': 39, 'pe': 'E'}, {'tamanho': 40, 'pe': 'D'},
+    {'tamanho': 38, 'pe': 'D'}, {'tamanho': 40, 'pe': 'D'},
+    {'tamanho': 37, 'pe': 'E'}, {'tamanho': 44, 'pe': 'D'},
+    {'tamanho': 37, 'pe': 'D'}, {'tamanho': 42, 'pe': 'D'},
+    {'tamanho': 41, 'pe': 'E'}, {'tamanho': 44, 'pe': 'E'},
+    {'tamanho': 37, 'pe': 'E'}, {'tamanho': 42, 'pe': 'D'}
+];
 
-const base = 38;
+const base = 37;
 let esquerdos = new Array(8);
 let direitos = new Array(8);
 esquerdos.fill(0);
 direitos.fill(0);
 
-/* processando entradas */
-for (let i=0; i < numeros.length; i++) {
-    const n = numeros[i];
-    const pe = pes[i];
+for (let i=0; i < sapatos.length; i++) {
+    const n = sapatos[i].tamanho;
+    const pe = sapatos[i].pe;
 
     const pos = n - base;
     if (pe == 'E') {
@@ -28,11 +34,10 @@ for (let i=0; i < numeros.length; i++) {
     }
 }
 
-/* gerando sai­da */
 for (let i=0; i < direitos.length; i++) {
     const min = direitos[i] < esquerdos[i] ? direitos[i] : esquerdos[i];
     if (min > 0) {
         const num = base + i;
-        console.log(num, min);
+        console.log(`Tamanho ${num}: ${min} par`);
     }
 }
