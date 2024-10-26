@@ -35,3 +35,4 @@ for (let i=0; i < direitos.length; i++) {
         const num = base + i;
         console.log(num, min);
     }
+}
