@@ -1,5 +1,6 @@
 function sayHello(e) {
-    console.log('Oi! Eu sou o ' + e.target.textContent + '!');
+    const btn = e.target; //referencia o elemento
+    console.log('Oi! Eu sou o ' + btn.textContent + '!');
 }
 
 const botao = document.querySelector('#botaoOK');
