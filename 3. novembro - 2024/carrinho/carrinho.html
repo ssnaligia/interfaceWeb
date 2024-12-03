@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho de Compras</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>CARRINHO DE COMPRAS</h1>
+    </header>
+
+    <main>
+        <section id="produtos">
+            <h2>Lista de Produtos</h2>
+            <ul>
+                <ul>
+                    <li>
+                        <span class="nome">Fone de Ouvido Bluetooth JBL</span>
+                        <span class="preco">R$ 399,00</span>
+                        <div class="quantidade">
+                            <button class="alterarQuantidade">-</button>
+                            <input type="number" value="1" min="1" class="quantidadeInput">
+                            <button class="alterarQuantidade">+</button>
+                        </div>
+                        <button class="adicionar">Adicionar ao carrinho</button>
+                    </li>               
+                <li>
+                    <span class="nome">Tênis Adidas Running</span>
+                    <span class="preco">R$ 249,90</span>
+                    <div class="quantidade">
+                        <button class="alterarQuantidade">-</button>
+                        <input type="number" value="1" min="1" class="quantidadeInput">
+                        <button class="alterarQuantidade">+</button>   
+                    </div>                
+                    <button class="adicionar">Adicionar ao carrinho</button>
+                </li>
+                <li>
+                    <span class="nome">Jaqueta Puma Sportswear</span>
+                    <span class="preco">R$ 399,00</span>
+                    <div class="quantidade">
+                        <button class="alterarQuantidade">-</button>
+                        <input type="number" value="1" min="1" class="quantidadeInput">
+                        <button class="alterarQuantidade">+</button>    
+                    </div>                
+                    <button class="adicionar">Adicionar ao carrinho</button>
+                </li>
+                <li>
+                    <span class="nome">Barra de Chocolate 70% Cacau</span>
+                    <span class="preco">R$ 12,90</span>
+                    <div class="quantidade">
+                        <button class="alterarQuantidade">-</button>
+                        <input type="number" value="1" min="1" class="quantidadeInput">
+                        <button class="alterarQuantidade">+</button>           
+                    </div>         
+                    <button class="adicionar">Adicionar ao carrinho</button>
+                </li>
+                <li>
+                    <span class="nome">Pasta de Amendoim Integral</span>
+                    <span class="preco">R$ 29,90</span>
+                    <div class="quantidade">
+                        <button class="alterarQuantidade">-</button>
+                        <input type="number" value="1" min="1" class="quantidadeInput">
+                        <button class="alterarQuantidade">+</button>                    
+                    </div>
+                    <button class="adicionar">Adicionar ao carrinho</button>
+                </li>
+            </ul>
+        </section>
+
+        <section id="carrinho">
+            <h2>Carrinho de Compras</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Produto</th>
+                        <th>Preço</th>
+                        <th>Quantidade</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+            <button id="esvaziar">Esvaziar Carrinho</button>
+        </section>
+
+        <section id="resumo">
+            <h3>Resumo da Compra</h3>
+            <p>Total de Itens: <span id="totalItens">0</span></p>
+            <p>Valor Total: <span id="valorTotal">R$ 0,00</span></p>
+        </section>
+    </main>
+</body>
+</html>
