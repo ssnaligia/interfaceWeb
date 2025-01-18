@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    font-family: "Poppins", serif;
+}
+
+:root {
+    --corPrimaria: #571e1e;
+    --corSecundaria: #631616;
+    --corTerciaria: #c59999;
+    --corQuartenaria: #dbb7b7;
+    --corQuintenaria: #dab9b9;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--corPrimaria) !important;
+}
+
+.titulo {
+    font-weight: 800;
+    font-size: 40px;
+    margin-top: 6%;
+    margin-bottom: -1%;
+    color: var(--corTerciaria);
+}
+
+.slogan {
+    font-weight: 300;
+    font-size: 18px;
+    margin-bottom: 8%;
+    color: var(--corQuartenaria);
+}
+
+.meuCard {
+    width: 95%;
+    max-width: 500px !important;
+    margin: auto; 
+    background-color: var(--corQuintenaria) !important;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#nome {
+    width: auto;
+    max-width: 200px;
+    display: inline-block;
+    font-size: 16px;
+    border: none; 
+    border-bottom: 2px solid var(--corTerciaria) ;
+    outline: none; 
+    background-color: transparent; 
+    user-select: none;
+}
+
+#nome:focus {
+    border-bottom: 2px solid var(--corSecundaria);
+}
+
+.field {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+input:focus, .form-check-input:focus, button:focus {
+    outline: none;
+    box-shadow: none !important;
+}
+
+.form-label {
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--corSecundaria);
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+input[type="radio"] + label {
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    color: var(--corSecundaria);
+}
+
+input[type="radio"] + label::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 2px solid var(--corSecundaria);
+    background-color: transparent;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+input[type="radio"]:checked + label::before {
+    background-color: var(--corSecundaria);
+    border-color: var(--corPrimaria);
+}
+
+.botaoP {
+    background-color: var(--corSecundaria) !important;
+    color: var(--corQuintenaria) !important;
+}
