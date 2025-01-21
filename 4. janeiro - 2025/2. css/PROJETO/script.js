@@ -1,4 +1,4 @@
-async function buscar_curriculo(genero, nacionalidade) {
+async function buscar_curriculo(genero, nacionalidade, usarNomePersonalizado) {
     const url = `https://randomuser.me/api/?gender=${genero}&nat=${nacionalidade}`;
 
     try {
@@ -6,29 +6,41 @@ async function buscar_curriculo(genero, nacionalidade) {
         if (response.ok) {
             let data = await response.json();
 
-            let nomeCompleto = `${data.results[0].name.first} ${data.results[0].name.last}`;
+            let nomeApi = `${data.results[0].name.first} ${data.results[0].name.last}`;
             let foto = data.results[0].picture.large;
             let email = data.results[0].email;
             let telefone = data.results[0].phone;
 
+            let nomeUsuario = document.getElementById("nome").value.trim();
+
+            let nomeFinal = (usarNomePersonalizado === "sim" && nomeUsuario) ? nomeUsuario : nomeApi;
+
+            document.querySelector('.meuCard').style.display = 'none';
+
             const userCard = document.getElementById('user-card');
             userCard.innerHTML = `
-                <img src="${foto}" alt="Foto de ${nomeCompleto}">
-                <h2>${nomeCompleto}</h2>
-                <p>Email: ${email}</p>
-                <p>Telefone: ${telefone}</p>
+                <div class="cardCurriculo">
+                    <div class="card-body text-center">
+                        <img src="${foto}" alt="Foto de ${nomeFinal}" class="img-fluid rounded-circle" style="width: 150px;">
+                        <h2 class="mt-3">${nomeFinal}</h2>
+                        <p><strong>Email:</strong> ${email}</p>
+                        <p><strong>Telefone:</strong> ${telefone}</p>
+                        <button class="btn btn-primary mt-3" onclick="location.reload()">Voltar</button>
+                    </div>
+                </div>
             `;
         } else {
-            console.error("Erro na requisição:", response.status);
+            swal("Erro na requisição", "error");
         }
     } catch (error) {
-        console.error("Erro ao buscar o currículo:", error);
+        swal("Erro na requisição", "error");
     }
 }
 
 function main() {
     let btn = document.querySelector('#buscar');
     btn.addEventListener('click', function () {
+        let nome = document.getElementById("nome").value;
         let radiosGenero = document.getElementsByName('genero');
         let genero = '';
         for (let radio of radiosGenero) {
@@ -47,17 +59,24 @@ function main() {
             }
         }
 
+        let usarNomePersonalizado = document.getElementById("personalizar").value;
+
+        if (!nome) {
+            swal("ATENÇÃO!", "Por favor, preencha o campo nome.", "warning");
+            return;
+        }
+
         if (!genero) {
-            alert('Por favor, selecione um gênero.');
+            swal("ATENÇÃO!", "Por favor, selecione um gênero.", "warning");
             return;
         }
 
         if (!nacionalidade) {
-            alert('Por favor, selecione uma nacionalidade.');
+            swal("ATENÇÃO!", "Por favor, selecione uma nacionalidade.", "warning");
             return;
         }
 
-        buscar_curriculo(genero, nacionalidade);
+        buscar_curriculo(genero, nacionalidade, usarNomePersonalizado);
     });
 }
 
