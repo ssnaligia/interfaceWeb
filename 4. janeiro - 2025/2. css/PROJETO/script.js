@@ -179,6 +179,8 @@ function main() {
                 showCloseButton: true,
                 focusConfirm: false,
                 confirmButtonText: `<i class="fa fa-thumbs-up"></i> Vou preencher!`,
+                confirmButtonColor: '#794444',
+                iconColor: '#da7430',
             });
             return;
         }
@@ -191,6 +193,8 @@ function main() {
                 showCloseButton: true,
                 focusConfirm: false,
                 confirmButtonText: `<i class="fa fa-thumbs-up"></i> Vou selecionar!`,
+                confirmButtonColor: '#794444',
+                iconColor: '#da7430',
             });
             return;
         }
@@ -203,6 +207,8 @@ function main() {
                 showCloseButton: true,
                 focusConfirm: false,
                 confirmButtonText: `<i class="fa fa-thumbs-up"></i> Vou selecionar!`,
+                confirmButtonColor: '#794444',
+                iconColor: '#da7430',
             });
             return;
         }
@@ -215,8 +221,8 @@ function main() {
                 showCloseButton: true,
                 focusConfirm: false,
                 confirmButtonText: `<i class="fa fa-thumbs-up"></i> Vou selecionar!`,
-                confirmButtonColor: '#571e1e',
-                iconColor: '#571e1e',
+                confirmButtonColor: '#794444',
+                iconColor: '#da7430',
             });
             return;
         }
